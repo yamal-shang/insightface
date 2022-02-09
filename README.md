@@ -1,237 +1,213 @@
 
 # InsightFace: 2D and 3D Face Analysis Project
 
-By Jia Guo and [Jiankang Deng](https://jiankangdeng.github.io/)
+<div align="left">
+  <img src="https://insightface.ai/assets/img/custom/logo3.jpg" width="240"/>
+</div>
+
+InsightFace project is mainly maintained By [Jia Guo](mailto:guojia@gmail.com?subject=[GitHub]%20InsightFace%20Project) and [Jiankang Deng](https://jiankangdeng.github.io/). 
+
+For all main contributors, please check [contributing](#contributing).
+
+## Top News
+
+
+**`2022-01-29`**: Python pip package ver 0.6.2 updated, added pose estimation and fixed model downloading urls, see [detail](python-package).
+
+**`2022-01-18`**: Ambiguity-Aware Human Pose Estimation is now available at [here](body/human_pose/ambiguity_aware).
+
+**`2021-11-30`**: [MFR-Ongoing](challenges/mfr) challenge launched, which is an extended version of [iccv21-mfr](challenges/iccv21-mfr).
+
+**`2021-11-25`**: Training face landmarks by synthetic data, see [alignment/synthetics](alignment/synthetics).
+
+**`2021-10-29`**: We achieved 1st place on the [VISA track](https://pages.nist.gov/frvt/plots/11/visa.html) of [NIST-FRVT 1:1](https://pages.nist.gov/frvt/html/frvt11.html) by using Partial FC (Xiang An, Jiankang Deng, Jia Guo).
+
+**`2021-10-11`**: [Leaderboard](https://insightface.ai/mfr21) of [ICCV21 - Masked Face Recognition Challenge](challenges/iccv21-mfr) released. Video: [Youtube](https://www.youtube.com/watch?v=lL-7l5t6x2w), [Bilibili](https://www.bilibili.com/video/BV15b4y1h79N/).
+
+**`2021-09-22`**: Update python library to ver-0.5, add new MBF and IR50 models, see [python-package](python-package).
+
+**`2021-08-07`**: Add new [model_zoo](model_zoo) page.
+
+**`2021-07-13`**: We now have implementations based on [paddlepaddle](https://github.com/PaddlePaddle): [arcface_paddle](recognition/arcface_paddle) for face recognition and [blazeface_paddle](detection/blazeface_paddle) for face detection.
+
+**`2021-07-09`**: We add a [person_detection](examples/person_detection) example, trained by [SCRFD](detection/scrfd), which can be called directly by our [python-library](python-package).
+
+**`2021-06-05`**: We launch a [Masked Face Recognition Challenge & Workshop](challenges/iccv21-mfr) on ICCV 2021.
+
+**`2021-05-15`**: We released an efficient high accuracy face detection approach called [SCRFD](detection/scrfd).
+
+**`2021-04-18`**: We achieved Rank-4th on NIST-FRVT 1:1, see [leaderboard](https://pages.nist.gov/frvt/html/frvt11.html).
+
+**`2021-03-13`**: We have released our official ArcFace PyTorch implementation, see [here](recognition/arcface_torch). 
 
 ## License
 
-The code of InsightFace is released under the MIT License. There is no limitation for both acadmic and commercial usage.
+The code of InsightFace is released under the MIT License. There is no limitation for both academic and commercial usage.
 
 The training data containing the annotation (and the models trained with these data) are available for non-commercial research purposes only.
 
-## ArcFace Video Demo
+Both manual-downloading models from our github repo and auto-downloading models with our [python-library](python-package) follow the above license policy(which is for non-commercial research purposes only).
 
-[![ArcFace Demo](https://github.com/deepinsight/insightface/blob/master/resources/facerecognitionfromvideo.PNG)](https://www.youtube.com/watch?v=y-D1tReryGA&t=81s)
+
+
+## Introduction
+
+[InsightFace](https://insightface.ai) is an open source 2D&3D deep face analysis toolbox, mainly based on PyTorch and MXNet. 
+
+Please check our [website](https://insightface.ai) for detail.
+
+The master branch works with **PyTorch 1.6+** and/or **MXNet=1.6-1.8**, with **Python 3.x**.
+
+InsightFace efficiently implements a rich variety of state of the art algorithms of face recognition, face detection and face alignment, which optimized for both training and deployment.
+
+## Quick Start
+
+Please start with our [python-package](python-package/), for testing detection, recognition and alignment models on input images.
+
+
+### ArcFace Video Demo
+
+
+[<img src=https://insightface.ai/assets/img/github/facerecognitionfromvideo.PNG width="760" />](https://www.youtube.com/watch?v=y-D1tReryGA&t=81s)
+
 
 Please click the image to watch the Youtube video. For Bilibili users, click [here](https://www.bilibili.com/video/av38041494?from=search&seid=11501833604850032313).
 
-## Recent Update
 
-**`2019.04.30`**: Our Face detector ([RetinaFace](https://github.com/deepinsight/insightface/tree/master/RetinaFace)) obtains state-of-the-art results on [the WiderFace dataset](http://shuoyang1213.me/WIDERFACE/WiderFace_Results.html).
 
-**`2019.04.14`**: We will launch a [Light-weight Face Recognition challenge/workshop](https://ibug.doc.ic.ac.uk/resources/lightweight-face-recognition-challenge-workshop/) on ICCV 2019.
+## Projects
 
-**`2019.04.04`**: Arcface achieved state-of-the-art performance (7/109) on the NIST Face Recognition Vendor Test (FRVT) (1:1 verification)
-[report](https://www.nist.gov/sites/default/files/documents/2019/04/04/frvt_report_2019_04_04.pdf) (name: Imperial-000 and Imperial-001). Our solution is based on [MS1MV2+DeepGlintAsian, ResNet100, ArcFace loss]. 
+The [page](https://insightface.ai/projects) on InsightFace website also describes all supported projects in InsightFace.
 
-**`2019.02.08`**: Please check [https://github.com/deepinsight/insightface/tree/master/recognition](https://github.com/deepinsight/insightface/tree/master/recognition) for our parallel training code which can easily and efficiently support one million identities on a single machine (8* 1080ti).
+You may also interested in some [challenges](https://insightface.ai/challenges) hold by InsightFace.
 
-**`2018.12.13`**: Inference acceleration [TVM-Benchmark](https://github.com/deepinsight/insightface/wiki/TVM-Benchmark).
 
-**`2018.10.28`**: Light-weight attribute model [Gender-Age](https://github.com/deepinsight/insightface/tree/master/gender-age). About 1MB, 10ms on single CPU core. Gender accuracy 96% on validation set and 4.1 age MAE.
 
-**`2018.10.16`**: We achieved state-of-the-art performance on [Trillionpairs](http://trillionpairs.deepglint.com/results) (name: nttstar) and [IQIYI_VID](http://challenge.ai.iqiyi.com/detail?raceId=5afc36639689443e8f815f9e) (name: WitcheR). 
-
-## Contents
-[Deep Face Recognition](#deep-face-recognition)
-- [Introduction](#introduction)
-- [Training Data](#training-data)
-- [Train](#train)
-- [Pretrained Models](#pretrained-models)
-- [Verification Results On Combined Margin](#verification-results-on-combined-margin)
-- [Test on MegaFace](#test-on-megaface)
-- [512-D Feature Embedding](#512-d-feature-embedding)
-- [Third-party Re-implementation](#third-party-re-implementation)
-
-[Face Alignment](#face-alignment)
-
-[Face Detection](#face-detection)
-
-[Citation](#citation)
-
-[Contact](#contact)
-
-## Deep Face Recognition
+## Face Recognition
 
 ### Introduction
 
-In this repository, we provide training data, network settings and loss designs for deep face recognition.
-The training data includes the normalised MS1M, VGG2 and CASIA-Webface datasets, which were already packed in MXNet binary format.
-The network backbones include ResNet, MobilefaceNet, MobileNet, InceptionResNet_v2, DenseNet, DPN.
-The loss functions include Softmax, SphereFace, CosineFace, ArcFace and Triplet (Euclidean/Angular) Loss.
+In this module, we provide training data, network settings and loss designs for deep face recognition.
+
+The supported methods are as follows:
+
+- [x] [ArcFace_mxnet (CVPR'2019)](recognition/arcface_mxnet)
+- [x] [ArcFace_torch (CVPR'2019)](recognition/arcface_torch)
+- [x] [SubCenter ArcFace (ECCV'2020)](recognition/subcenter_arcface)
+- [x] [PartialFC_mxnet (Arxiv'2020)](recognition/partial_fc)
+- [x] [PartialFC_torch (Arxiv'2020)](recognition/arcface_torch)
+- [x] [VPL (CVPR'2021)](recognition/vpl)
+- [x] [Arcface_oneflow](recognition/arcface_oneflow)
+- [x] [ArcFace_Paddle (CVPR'2019)](recognition/arcface_paddle)
+
+Commonly used network backbones are included in most of the methods, such as IResNet, MobilefaceNet, MobileNet, InceptionResNet_v2, DenseNet, etc..
 
 
-![margin penalty for target logit](https://github.com/deepinsight/insightface/raw/master/resources/arcface.png)
+### Datasets
 
-Our method, ArcFace, was initially described in an [arXiv technical report](https://arxiv.org/abs/1801.07698). By using this repository, you can simply achieve LFW 99.80%+ and Megaface 98%+ by a single model. This repository can help researcher/engineer to develop deep face recognition algorithms quickly by only two steps: download the binary dataset and run the training script.
+The training data includes, but not limited to the cleaned MS1M, VGG2 and CASIA-Webface datasets, which were already packed in MXNet binary format. Please [dataset](recognition/_datasets_) page for detail.
 
-### Training Data
+### Evaluation
 
-All face images are aligned by [MTCNN](https://kpzhang93.github.io/MTCNN_face_detection_alignment/index.html) and cropped to 112x112:
-
-Please check [Dataset-Zoo](https://github.com/deepinsight/insightface/wiki/Dataset-Zoo) for detail information and dataset downloading.
-
-
-* Please check *src/data/face2rec2.py* on how to build a binary face dataset. Any public available *MTCNN* can be used to align the faces, and the performance should not change. We will improve the face normalisation step by full pose alignment methods recently.
-
-### Train
-
-1. Install `MXNet` with GPU support (Python 2.7).
-
-```
-pip install mxnet-cu90
-```
-
-2. Clone the InsightFace repository. We call the directory insightface as *`INSIGHTFACE_ROOT`*.
-
-```
-git clone --recursive https://github.com/deepinsight/insightface.git
-```
-
-3. Download the training set (`MS1M-Arcface`) and place it in *`$INSIGHTFACE_ROOT/datasets/`*. Each training dataset includes at least following 6 files:
-
-```Shell
-    faces_emore/
-       train.idx
-       train.rec
-       property
-       lfw.bin
-       cfp_fp.bin
-       agedb_30.bin
-```
-
-The first three files are the training dataset while the last three files are verification sets.
-
-4. Train deep face recognition models.
-In this part, we assume you are in the directory *`$INSIGHTFACE_ROOT/recognition/`*.
-```Shell
-export MXNET_CPU_WORKER_NTHREADS=24
-export MXNET_ENGINE_TYPE=ThreadedEnginePerDevice
-```
-
-Place and edit config file:
-```Shell
-cp sample_config.py config.py
-vim config.py # edit dataset path etc..
-```
-
-We give some examples below. Our experiments were conducted on the Tesla P40 GPU.
-
-(1). Train ArcFace with LResNet100E-IR.
-
-```Shell
-CUDA_VISIBLE_DEVICES='0,1,2,3' python -u train.py --network r100 --loss arcface --dataset emore
-```
-It will output verification results of *LFW*, *CFP-FP* and *AgeDB-30* every 2000 batches. You can check all options in *config.py*.
-This model can achieve *LFW 99.80+* and *MegaFace 98.3%+*.
-
-(2). Train CosineFace with LResNet50E-IR.
-
-```Shell
-CUDA_VISIBLE_DEVICES='0,1,2,3' python -u train.py --network r50 --loss cosface --dataset emore
-```
-
-(3). Train Softmax with LMobileNet-GAP.
-
-```Shell
-CUDA_VISIBLE_DEVICES='0,1,2,3' python -u train.py --network m1 --loss softmax --dataset emore
-```
-
-(4). Fine-turn the above Softmax model with Triplet loss.
-
-```Shell
-CUDA_VISIBLE_DEVICES='0,1,2,3' python -u train.py --network m1 --loss triplet --lr 0.005 --pretrained ./models/m1-softmax-emore,1
-```
-
-
-5. Verification results.
-
-*LResNet100E-IR* network trained on *MS1M-Arcface* dataset with ArcFace loss:
-
-| Method  | LFW(%) | CFP-FP(%) | AgeDB-30(%) |  
-| ------- | ------ | --------- | ----------- |  
-|  Ours   | 99.80+ | 98.0+     | 98.20+      |   
-
+We provide standard IJB and Megaface evaluation pipelines in [evaluation](recognition/_evaluation_)
 
 
 ### Pretrained Models
 
-You can use `$INSIGHTFACE/src/eval/verification.py` to test all the pre-trained models.
-
 **Please check [Model-Zoo](https://github.com/deepinsight/insightface/wiki/Model-Zoo) for more pretrained models.**
 
-
-
-### Verification Results on Combined Margin
-
-A combined margin method was proposed as a function of target logits value and original `θ`:
-
-```
-COM(θ) = cos(m_1*θ+m_2) - m_3
-```
-
-For training with `m1=1.0, m2=0.3, m3=0.2`, run following command:
-```
-CUDA_VISIBLE_DEVICES='0,1,2,3' python -u train_softmax.py --network r100 --loss combined --dataset emore
-```
-
-Results by using ``MS1M-IBUG(MS1M-V1)``
-
-| Method           | m1   | m2   | m3   | LFW   | CFP-FP | AgeDB-30 |
-| ---------------- | ---- | ---- | ---- | ----- | ------ | -------- |
-| W&F Norm Softmax | 1    | 0    | 0    | 99.28 | 88.50  | 95.13    |
-| SphereFace       | 1.5  | 0    | 0    | 99.76 | 94.17  | 97.30    |
-| CosineFace       | 1    | 0    | 0.35 | 99.80 | 94.4   | 97.91    |
-| ArcFace          | 1    | 0.5  | 0    | 99.83 | 94.04  | 98.08    |
-| Combined Margin  | 1.2  | 0.4  | 0    | 99.80 | 94.08  | 98.05    |
-| Combined Margin  | 1.1  | 0    | 0.35 | 99.81 | 94.50  | 98.08    |
-| Combined Margin  | 1    | 0.3  | 0.2  | 99.83 | 94.51  | 98.13    |
-| Combined Margin  | 0.9  | 0.4  | 0.15 | 99.83 | 94.20  | 98.16    |
-
-### Test on MegaFace
-
-Please check *`$INSIGHTFACE_ROOT/Evaluation/megaface/`* to evaluate the model accuracy on Megaface. All aligned images were already provided.
-
-
-### 512-D Feature Embedding
-
-In this part, we assume you are in the directory *`$INSIGHTFACE_ROOT/deploy/`*. The input face image should be generally centre cropped. We use *RNet+ONet* of *MTCNN* to further align the image before sending it to the feature embedding network.
-
-1. Prepare a pre-trained model.
-2. Put the model under *`$INSIGHTFACE_ROOT/models/`*. For example, *`$INSIGHTFACE_ROOT/models/model-r100-ii`*.
-3. Run the test script *`$INSIGHTFACE_ROOT/deploy/test.py`*.
-
-For single cropped face image(112x112), total inference time is only 17ms on our testing server(Intel E5-2660 @ 2.00GHz, Tesla M40, *LResNet34E-IR*).
-
-### Third-party Re-implementation
+### Third-party Re-implementation of ArcFace
 
 - TensorFlow: [InsightFace_TF](https://github.com/auroua/InsightFace_TF)
 - TensorFlow: [tf-insightface](https://github.com/AIInAi/tf-insightface)
+- TensorFlow:[insightface](https://github.com/Fei-Wang/insightface)
 - PyTorch: [InsightFace_Pytorch](https://github.com/TreB1eN/InsightFace_Pytorch)
 - PyTorch: [arcface-pytorch](https://github.com/ronghuaiyang/arcface-pytorch)
 - Caffe: [arcface-caffe](https://github.com/xialuxi/arcface-caffe)
 - Caffe: [CombinedMargin-caffe](https://github.com/gehaocool/CombinedMargin-caffe)
 - Tensorflow: [InsightFace-tensorflow](https://github.com/luckycallor/InsightFace-tensorflow)
+- TensorRT: [wang-xinyu/tensorrtx](https://github.com/wang-xinyu/tensorrtx)  
+- TensorRT: [InsightFace-REST](https://github.com/SthPhoenix/InsightFace-REST)
+- ONNXRuntime C++: [ArcFace-ONNXRuntime](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/ort/cv/glint_arcface.cpp)
+- MNN: [ArcFace-MNN](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/mnn/cv/mnn_glint_arcface.cpp)
+- TNN: [ArcFace-TNN](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/tnn/cv/tnn_glint_arcface.cpp)
+- NCNN: [ArcFace-NCNN](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/ncnn/cv/ncnn_glint_arcface.cpp)
+
+## Face Detection
+
+### Introduction
+
+<div align="left">
+  <img src="https://insightface.ai/assets/img/github/11513D05.jpg" width="640"/>
+</div>
+
+In this module, we provide training data with annotation, network settings and loss designs for face detection training, evaluation and inference.
+
+The supported methods are as follows:
+
+- [x] [RetinaFace (CVPR'2020)](detection/retinaface)
+- [x] [SCRFD (Arxiv'2021)](detection/scrfd)
+- [x] [blazeface_paddle](detection/blazeface_paddle)
+
+[RetinaFace](detection/retinaface) is a practical single-stage face detector which is accepted by [CVPR 2020](https://openaccess.thecvf.com/content_CVPR_2020/html/Deng_RetinaFace_Single-Shot_Multi-Level_Face_Localisation_in_the_Wild_CVPR_2020_paper.html). We provide training code, training dataset, pretrained models and evaluation scripts. 
+
+[SCRFD](detection/scrfd) is an efficient high accuracy face detection approach which is initialy described in [Arxiv](https://arxiv.org/abs/2105.04714). We provide an easy-to-use pipeline to train high efficiency face detectors with NAS supporting.
 
 
 ## Face Alignment
 
-Please check the [Menpo](https://github.com/jiankangdeng/MenpoBenchmark) Benchmark and [Dense U-Net](https://github.com/deepinsight/insightface/tree/master/alignment) for more details.
+### Introduction
 
-## Face Detection
+<div align="left">
+  <img src="https://insightface.ai/assets/img/custom/thumb_sdunet.png" width="600"/>
+</div>
 
-Please check [RetinaFace](https://github.com/deepinsight/insightface/tree/master/RetinaFace) for more details.
+In this module, we provide datasets and training/inference pipelines for face alignment.
+
+Supported methods:
+
+- [x] [SDUNets (BMVC'2018)](alignment/heatmap)
+- [x] [SimpleRegression](alignment/coordinate_reg)
+
+
+[SDUNets](alignment/heatmap) is a heatmap based method which accepted on [BMVC](http://bmvc2018.org/contents/papers/0051.pdf).
+
+[SimpleRegression](alignment/coordinate_reg) provides very lightweight facial landmark models with fast coordinate regression. The input of these models is loose cropped face image while the output is the direct landmark coordinates.
+
 
 ## Citation
 
 If you find *InsightFace* useful in your research, please consider to cite the following related papers:
 
 ```
-@inproceedings{deng2019retinaface,
-title={RetinaFace: Single-stage Dense Face Localisation in the Wild},
-author={Deng, Jiankang and Guo, Jia and Yuxiang, Zhou and Jinke Yu and Irene Kotsia and Zafeiriou, Stefanos},
-booktitle={arxiv},
-year={2019}
+
+@article{guo2021sample,
+  title={Sample and Computation Redistribution for Efficient Face Detection},
+  author={Guo, Jia and Deng, Jiankang and Lattas, Alexandros and Zafeiriou, Stefanos},
+  journal={arXiv preprint arXiv:2105.04714},
+  year={2021}
+}
+
+@inproceedings{an2020partical_fc,
+  title={Partial FC: Training 10 Million Identities on a Single Machine},
+  author={An, Xiang and Zhu, Xuhan and Xiao, Yang and Wu, Lan and Zhang, Ming and Gao, Yuan and Qin, Bin and
+  Zhang, Debing and Fu Ying},
+  booktitle={Arxiv 2010.05222},
+  year={2020}
+}
+
+@inproceedings{deng2020subcenter,
+  title={Sub-center ArcFace: Boosting Face Recognition by Large-scale Noisy Web Faces},
+  author={Deng, Jiankang and Guo, Jia and Liu, Tongliang and Gong, Mingming and Zafeiriou, Stefanos},
+  booktitle={Proceedings of the IEEE Conference on European Conference on Computer Vision},
+  year={2020}
+}
+
+@inproceedings{Deng2020CVPR,
+title = {RetinaFace: Single-Shot Multi-Level Face Localisation in the Wild},
+author = {Deng, Jiankang and Guo, Jia and Ververas, Evangelos and Kotsia, Irene and Zafeiriou, Stefanos},
+booktitle = {CVPR},
+year = {2020}
 }
 
 @inproceedings{guo2018stacked,
@@ -256,9 +232,12 @@ year={2019}
 }
 ```
 
-## Contact
+## Contributing
 
-```
-[Jia Guo](guojia[at]gmail.com)
-[Jiankang Deng](jiankangdeng[at]gmail.com)
-```
+Main contributors:
+
+- [Jia Guo](https://github.com/nttstar), ``guojia[at]gmail.com``
+- [Jiankang Deng](https://github.com/jiankangdeng) ``jiankangdeng[at]gmail.com``
+- [Xiang An](https://github.com/anxiangsir) ``anxiangsir[at]gmail.com``
+- [Jack Yu](https://github.com/szad670401) ``jackyu961127[at]gmail.com``
+
